@@ -1,144 +1,52 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Portfólio de João Caneca — Dados, Supply Chain e Engenharia de Dados com Azure, Databricks, PySpark e SQL.">
-  <meta name="theme-color" content="#07111f">
-  <title>João Caneca | Data & Engineering</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Portfólio de João Caneca — Dados, BI, Analytics Engineering e automação.">
+  <meta name="robots" content="index,follow">
+  <title>João Caneca — Dados, BI e Analytics Engineering</title>
+  <style>
+    :root{--bg:#07111f;--panel:#0c1b2d;--panel2:#10243a;--text:#f4f8fc;--muted:#9db0c4;--blue:#35a9ff;--cyan:#5ce1d2;--amber:#f3c66b;--line:rgba(160,190,220,.18);--max:1180px}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 Inter,Segoe UI,Arial,sans-serif;background-image:radial-gradient(circle at 88% 5%,rgba(53,169,255,.16),transparent 24%)}a{color:inherit;text-decoration:none}.review{background:#f3c66b;color:#17202b;text-align:center;padding:8px 18px;font-weight:800;font-size:12px;letter-spacing:.08em}.nav{max-width:var(--max);margin:auto;padding:22px 28px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}.brand{display:flex;gap:11px;align-items:center;font-weight:800}.mark{display:grid;place-items:center;width:38px;height:38px;border:1px solid var(--blue);color:var(--blue);font-size:12px}.links{display:flex;gap:24px;color:var(--muted);font-size:14px}.hero{max-width:var(--max);margin:auto;padding:72px 28px 58px;display:grid;grid-template-columns:1.25fr .75fr;gap:60px;align-items:center}.kicker,.section-kicker{color:var(--cyan);font-size:12px;font-weight:800;letter-spacing:.15em}.hero h1{font-size:clamp(42px,5.6vw,72px);line-height:1.03;letter-spacing:-.045em;margin:14px 0 22px}.hero p{color:var(--muted);font-size:18px;max-width:760px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}.btn{padding:12px 18px;border-radius:7px;border:1px solid var(--line);font-weight:750;font-size:14px}.primary{background:var(--blue);color:#03111d;border-color:var(--blue)}.portrait{position:relative}.portrait img{width:min(320px,90%);aspect-ratio:1;object-fit:cover;border-radius:50%;display:block;margin:auto;border:7px solid #0c1b2d;outline:1px solid var(--blue)}.reference{position:absolute;right:0;bottom:10px;background:var(--panel);border:1px solid var(--line);padding:12px 16px;border-radius:9px;font-size:12px}.reference b{display:block;color:var(--cyan)}.proofs{max-width:var(--max);margin:auto;padding:0 28px 72px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.proof{border-top:1px solid var(--line);padding:20px 0}.proof strong{display:block;font-size:22px}.proof span{color:var(--muted);font-size:13px}.section{max-width:var(--max);margin:auto;padding:82px 28px}.section-head{display:grid;grid-template-columns:58px 1fr;gap:10px;margin-bottom:36px}.section-head h2{font-size:clamp(30px,4vw,48px);line-height:1.12;margin:0;letter-spacing:-.035em}.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-left:68px}.card{background:linear-gradient(145deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:12px;padding:28px}.meta{display:flex;gap:7px;flex-wrap:wrap}.tag{font-size:10px;font-weight:800;letter-spacing:.08em;padding:5px 8px;border:1px solid rgba(92,225,210,.3);color:var(--cyan);border-radius:99px}.tag.evidence{color:var(--amber);border-color:rgba(243,198,107,.35)}.card h3{font-size:24px;line-height:1.2;margin:20px 0 10px}.card p{color:var(--muted);margin:0 0 17px}.facts{display:grid;gap:9px;margin:20px 0}.facts div{display:grid;grid-template-columns:95px 1fr;gap:10px;font-size:13px}.facts b{color:#d5e4f2}.facts span{color:var(--muted)}.card-actions{display:flex;gap:10px}.card-actions a,.disabled{font-size:13px;font-weight:800;color:var(--blue)}.disabled{color:#73869a}.experience{margin-left:68px;border-left:1px solid var(--line)}.role{padding:0 0 38px 28px;position:relative}.role:before{content:"";position:absolute;left:-5px;top:8px;width:9px;height:9px;border-radius:50%;background:var(--blue)}.role h3{margin:0;font-size:21px}.role small{color:var(--cyan)}.role p{color:var(--muted);max-width:840px}.stack{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-left:68px}.stack article{border:1px solid var(--line);padding:24px;border-radius:10px}.stack h3{font-size:17px;margin:0 0 13px}.stack p{color:var(--muted);font-size:14px}.tool-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin:0 0 22px 68px}.tool{margin:0;min-height:112px;display:grid;place-items:center;align-content:center;gap:9px;background:linear-gradient(145deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:11px}.tool svg{width:48px;height:48px}.tool figcaption{font-size:12px;font-weight:800;color:#d9e8f6}.credential{margin:20px 0 0 68px;display:inline-flex;align-items:center;gap:9px;color:var(--blue);font-weight:800;font-size:14px}.about{margin-left:68px;display:grid;grid-template-columns:1fr 1fr;gap:42px}.about .lead{font-size:26px;line-height:1.4;margin:0}.about p{color:var(--muted)}.contact{max-width:calc(var(--max) - 56px);margin:55px auto 80px;padding:54px;background:var(--panel);border:1px solid var(--line);border-radius:14px}.contact h2{font-size:clamp(32px,4vw,52px);line-height:1.1;margin:12px 0}.contact p{color:var(--muted)}footer{max-width:var(--max);margin:auto;padding:28px;border-top:1px solid var(--line);color:var(--muted);font-size:12px;display:flex;justify-content:space-between}@media(max-width:850px){.links{display:none}.hero{grid-template-columns:1fr;padding-top:50px}.portrait{max-width:390px;margin:auto}.proofs{grid-template-columns:1fr 1fr}.cards{grid-template-columns:1fr}.cards,.experience,.stack,.about,.tool-grid,.credential{margin-left:0}.stack{grid-template-columns:1fr}.tool-grid{grid-template-columns:repeat(3,1fr)}.about{grid-template-columns:1fr}.section-head{grid-template-columns:42px 1fr}}@media(max-width:520px){.nav,.hero,.proofs,.section{padding-left:20px;padding-right:20px}.hero h1{font-size:40px}.proofs{grid-template-columns:1fr;padding-bottom:35px}.cards{grid-template-columns:1fr}.card{padding:22px}.facts div{grid-template-columns:80px 1fr}.tool-grid{grid-template-columns:repeat(2,1fr)}.contact{margin:35px 20px 55px;padding:30px 22px}footer{margin:0 20px;padding-left:0;padding-right:0;flex-direction:column;gap:6px}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  </style>
 </head>
 <body>
-  <a class="skip-link" href="#main">Pular para o conteúdo</a>
-
-  <header class="site-header">
-    <a class="brand" href="#inicio" aria-label="Página inicial de João Caneca">
-      <span class="brand-mark">JC</span>
-      <span>João Caneca</span>
-    </a>
-    <nav aria-label="Navegação principal">
-      <a href="#sobre" data-pt="Sobre" data-en="About">Sobre</a>
-      <a href="#tecnologias" data-pt="Tecnologias" data-en="Skills">Tecnologias</a>
-      <a href="#projetos" data-pt="Projetos" data-en="Projects">Projetos</a>
-      <a href="#contato" data-pt="Contato" data-en="Contact">Contato</a>
-    </nav>
-    <button class="lang-button" id="languageToggle" type="button" aria-label="Mudar idioma">EN</button>
-  </header>
-
-  <main id="main">
-    <section class="hero" id="inicio">
-      <div class="hero-copy reveal">
-        <p class="eyebrow" data-pt="DADOS • SUPPLY CHAIN • ENGENHARIA" data-en="DATA • SUPPLY CHAIN • ENGINEERING">DADOS • SUPPLY CHAIN • ENGENHARIA</p>
-        <h1 data-pt="Transformo desafios operacionais em soluções orientadas por dados." data-en="I turn operational challenges into data-driven solutions.">Transformo desafios operacionais em soluções orientadas por dados.</h1>
-        <p class="hero-text" data-pt="Analista de Dados em evolução para Engenharia de Dados, conectando experiência de negócio a pipelines, qualidade e arquitetura no ecossistema Azure + Databricks." data-en="Data Analyst evolving into Data Engineering, connecting business experience with pipelines, quality and architecture across the Azure + Databricks ecosystem.">Analista de Dados em evolução para Engenharia de Dados, conectando experiência de negócio a pipelines, qualidade e arquitetura no ecossistema Azure + Databricks.</p>
-        <div class="hero-actions">
-          <a class="button primary" href="#projetos" data-pt="Conhecer projetos" data-en="Explore projects">Conhecer projetos</a>
-          <a class="button secondary" href="https://www.linkedin.com/in/joao-caneca/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
-        </div>
-        <ul class="quick-facts" aria-label="Destaques profissionais">
-          <li><strong>AZ-900</strong><span data-pt="Certificado" data-en="Certified">Certificado</span></li>
-          <li><strong>Azure + Databricks</strong><span data-pt="Foco técnico" data-en="Technical focus">Foco técnico</span></li>
-          <li><strong>Supply Chain</strong><span data-pt="Contexto de negócio" data-en="Business context">Contexto de negócio</span></li>
-        </ul>
-      </div>
-
-      <div class="hero-visual reveal" aria-label="Fluxo de uma plataforma de dados">
-        <div class="portrait-wrap">
-          <img src="https://avatars.githubusercontent.com/u/308931404?v=4" alt="Foto profissional de João Caneca" width="360" height="360">
-          <span class="status"><i></i><span data-pt="Construindo em público" data-en="Building in public">Construindo em público</span></span>
-        </div>
-        <div class="pipeline-card">
-          <div class="pipeline-head"><span>logistics_pipeline</span><span class="live-dot">LIVE</span></div>
-          <div class="pipeline-flow">
-            <span>Sources</span><b>→</b><span>Bronze</span><b>→</b><span>Silver</span><b>→</b><span>Gold</span>
-          </div>
-          <div class="code-lines" aria-hidden="true"><i></i><i></i><i></i></div>
-        </div>
-      </div>
+  <header class="nav"><div class="brand"><span class="mark">JC</span>João Caneca</div><nav class="links"><a href="#projetos">Projetos</a><a href="#experiencia">Experiência</a><a href="#stack">Tecnologias</a><a href="#sobre">Sobre</a></nav></header>
+  <main>
+    <section class="hero">
+      <div><div class="kicker">ANALYTICS ENGINEERING · DADOS & BI · AUTOMAÇÃO</div><h1>Transformo necessidades de negócio em dados confiáveis, análises e automações.</h1><p>Profissional de Dados e BI com experiência em modelagem analítica, qualidade de dados e soluções utilizadas por equipes de negócio. Desenvolvo projetos de Analytics Engineering e Engenharia de Dados com SQL, Python e Databricks.</p><div class="actions"><a class="btn primary" href="#projetos">Ver projetos</a><a class="btn" href="assets/CV_Joao_Caneca_Publico_Sanitizado.docx" download>Baixar CV</a><a class="btn" href="https://www.linkedin.com/in/joao-caneca/">LinkedIn ↗</a></div></div>
+      <div class="portrait"><img src="https://avatars.githubusercontent.com/u/308931404?v=4" alt="João Caneca"><div class="reference"><b>Foco atual</b>Dados confiáveis → decisão</div></div>
     </section>
+    <section class="proofs" aria-label="Provas selecionadas"><div class="proof"><strong>10 anos</strong><span>experiência em tecnologia, dados e processos</span></div><div class="proof"><strong>Dados & BI</strong><span>experiência profissional aplicada ao negócio</span></div><a class="proof" href="https://learn.microsoft.com/api/credentials/share/pt-br/JopeCaneca/215937EF058F4C33?sharingId=A9AF119D516C8B7C"><strong>AZ-900 ↗</strong><span>credencial Microsoft Azure Fundamentals</span></a></section>
 
-    <section class="section about" id="sobre">
-      <div class="section-heading reveal">
-        <p class="section-number">01</p>
-        <h2 data-pt="Negócio e tecnologia na mesma conversa" data-en="Business and technology in the same conversation">Negócio e tecnologia na mesma conversa</h2>
-      </div>
-      <div class="about-grid">
-        <p class="lead reveal" data-pt="Minha trajetória em análise, automação e operações me ensinou que uma boa solução de dados começa com a compreensão do problema — não com a ferramenta." data-en="My journey through analytics, automation and operations taught me that a strong data solution begins with understanding the problem — not with the tool.">Minha trajetória em análise, automação e operações me ensinou que uma boa solução de dados começa com a compreensão do problema — não com a ferramenta.</p>
-        <div class="about-copy reveal">
-          <p data-pt="Atuo com dados aplicados a Supply Chain e Logística, trabalhando com indicadores, inventário, retorno de ativos, ocupação e eficiência operacional. Hoje, aprofundo essa experiência na construção de plataformas de dados escaláveis, rastreáveis e orientadas à qualidade." data-en="I work with data applied to Supply Chain and Logistics, covering KPIs, inventory, asset returns, capacity and operational efficiency. Today, I am extending that experience into scalable, traceable and quality-driven data platforms.">Atuo com dados aplicados a Supply Chain e Logística, trabalhando com indicadores, inventário, retorno de ativos, ocupação e eficiência operacional. Hoje, aprofundo essa experiência na construção de plataformas de dados escaláveis, rastreáveis e orientadas à qualidade.</p>
-          <p data-pt="Meu objetivo é atuar como Data Engineer ou Analytics Engineer, aproximando arquitetura, engenharia e decisões reais de negócio." data-en="My goal is to work as a Data Engineer or Analytics Engineer, bringing architecture, engineering and real business decisions closer together.">Meu objetivo é atuar como Data Engineer ou Analytics Engineer, aproximando arquitetura, engenharia e decisões reais de negócio.</p>
-        </div>
-      </div>
-    </section>
+    <section class="section" id="projetos"><div class="section-head"><span class="section-kicker">01</span><h2>Projetos e entregas selecionadas</h2></div><div class="cards">
+      <article class="card"><div class="meta"><span class="tag">CASE PROFISSIONAL</span><span class="tag evidence">SANITIZADO</span></div><h3>Agente de IA e Automação</h3><p>Consultas operacionais dependiam de extrações e tratamentos manuais em SAP e Excel.</p><div class="facts"><div><b>Problema</b><span>Acesso lento e pouco padronizado às informações.</span></div><div><b>Solução</b><span>Agente no Copilot Studio e automações de coleta e padronização.</span></div><div><b>Impacto</b><span>Consultas simplificadas, menor esforço manual e apoio à decisão.</span></div></div><div class="card-actions"><span class="disabled">Estudo de caso em preparação</span></div></article>
+      <article class="card"><div class="meta"><span class="tag">DATA ENGINEERING</span><span class="tag evidence">CÓDIGO PÚBLICO</span></div><h3>Logistics Weather Data Pipeline</h3><p>APIs meteorológicas exigem controle de janela, localidade, tentativas e rastreabilidade.</p><div class="facts"><div><b>Problema</b><span>Preparar dados confiáveis antes da análise de risco logístico.</span></div><div><b>Solução</b><span>Extração para cinco cidades com batch/run/attempt, validações e Raw.</span></div><div><b>Status</b><span>Extração local validada; integração em desenvolvimento.</span></div></div><div class="card-actions"><a href="https://github.com/Soba-Jopeca/logistics-weather-data-pipeline">Ver código ↗</a></div></article>
+      <article class="card"><div class="meta"><span class="tag">ANALYTICS / DATA ENGINEERING</span><span class="tag evidence">DADOS SINTÉTICOS</span></div><h3>Logistics Operations Data Platform</h3><p>Fontes heterogêneas precisam de contratos, qualidade, rastreabilidade e reexecução segura.</p><div class="facts"><div><b>Problema</b><span>Integrar dados logísticos sem perder controle e auditabilidade.</span></div><div><b>Solução</b><span>Ingestão Delta/CSV e JDBC, auditoria e fundação Bronze-to-Silver.</span></div><div><b>Status</b><span>Repositório privado; estudo de caso em preparação.</span></div></div><div class="card-actions"><span class="disabled">Estudo de caso em preparação</span></div></article>
+      <article class="card"><div class="meta"><span class="tag">DISCOVERY & ARQUITETURA</span><span class="tag evidence">CÓDIGO PÚBLICO</span></div><h3>Supply Chain Control Tower</h3><p>Dados fragmentados e decisões reativas dificultam antecipar riscos em transferências.</p><div class="facts"><div><b>Problema</b><span>Falta de visão preventiva e critérios claros para resposta.</span></div><div><b>Solução</b><span>Discovery, requisitos, ADRs e arquitetura alvo versus laboratório.</span></div><div><b>Status</b><span>Projeto independente; arquitetura em desenvolvimento.</span></div></div><div class="card-actions"><a href="https://github.com/Soba-Jopeca/supply-chain-control-tower">Ver repositório ↗</a></div></article>
+      <article class="card"><div class="meta"><span class="tag">PRODUTO DIGITAL</span><span class="tag evidence">PRIVADO · EM REVISÃO</span></div><h3>Protocolo Fênix</h3><p>Atividades e prioridades de uma transição profissional ficam dispersas e difíceis de acompanhar.</p><div class="facts"><div><b>Problema</b><span>Ausência de uma visão central de oportunidades, estudos e execução.</span></div><div><b>Solução</b><span>Protótipo navegável para organizar planejamento e acompanhamento.</span></div><div><b>Status</b><span>Em desenvolvimento e em revisão para publicação.</span></div></div><div class="card-actions"><span class="disabled">Em breve</span></div></article>
+      <article class="card"><div class="meta"><span class="tag">APRENDIZAGEM</span><span class="tag evidence">PRIVADO · EM REVISÃO</span></div><h3>Lectoria</h3><p>Metas, sessões, resumos e aprendizados de leitura ficam dispersos.</p><div class="facts"><div><b>Problema</b><span>Dificuldade de acompanhar evolução e retenção do conhecimento.</span></div><div><b>Solução</b><span>Aplicação com biblioteca, planejamento, sessões, resumos e indicadores.</span></div><div><b>Status</b><span>Em desenvolvimento e em revisão para publicação.</span></div></div><div class="card-actions"><span class="disabled">Em breve</span></div></article>
+    </div></section>
 
-    <section class="section" id="tecnologias">
-      <div class="section-heading reveal">
-        <p class="section-number">02</p>
-        <h2 data-pt="Tecnologias com propósito" data-en="Technology with purpose">Tecnologias com propósito</h2>
-      </div>
-      <div class="skills-grid">
-        <article class="skill-card reveal"><span class="skill-icon">{ }</span><h3>Data Engineering</h3><p>Python · PySpark · Apache Spark · Spark SQL · Delta Lake · ETL/ELT · Medallion</p></article>
-        <article class="skill-card reveal"><span class="skill-icon">☁</span><h3>Cloud & Platforms</h3><p>Microsoft Azure · Azure SQL Database · Databricks · JDBC</p></article>
-        <article class="skill-card reveal"><span class="skill-icon">▥</span><h3>Analytics</h3><p>SQL · Power BI · DAX · Power Query · Excel · Data Modeling</p></article>
-        <article class="skill-card reveal"><span class="skill-icon">⚙</span><h3>Automation & Delivery</h3><p>Power Automate · Power Apps · SharePoint · Git · GitHub Actions · CI/CD</p></article>
-      </div>
-    </section>
+    <section class="section" id="experiencia"><div class="section-head"><span class="section-kicker">02</span><h2>Experiência conectada a resultado</h2></div><div class="experience"><article class="role"><small>HEINEKEN BRASIL · 04/11/2024–06/10/2026</small><h3>Analista Sênior de RPM — Logistics Planning</h3><p>Dados, BI, automação e soluções de Power Platform para simplificar rotinas, aumentar a confiabilidade das informações e apoiar decisões.</p></article><article class="role"><small>REFRIANGO · NOV/2023–JUL/2024</small><h3>Analista de Dados Mestres</h3><p>Padronização, validação e confiabilidade de dados, com indicadores em Power BI para análise e controle.</p></article><article class="role"><small>RESEARCH POINT GROUP · SET/2021–MAI/2022</small><h3>Coordenador de Dados e Pesquisa</h3><p>Coordenação de coleta, tratamento e análise de pesquisas de mercado com Python, Excel e SAS.</p></article></div></section>
 
-    <section class="section project-section" id="projetos">
-      <div class="section-heading reveal">
-        <p class="section-number">03</p>
-        <h2 data-pt="Projeto em destaque" data-en="Featured project">Projeto em destaque</h2>
-      </div>
-      <article class="project-card reveal">
-        <div class="project-copy">
-          <div class="project-meta"><span>DATA ENGINEERING</span><span data-pt="EM DESENVOLVIMENTO" data-en="IN PROGRESS">EM DESENVOLVIMENTO</span></div>
-          <h3>Logistics Operations Data Platform</h3>
-          <p data-pt="Uma plataforma de dados inspirada em um cenário logístico real, criada para demonstrar decisões de arquitetura, ingestão, qualidade, transformação e consumo analítico de ponta a ponta." data-en="A data platform inspired by a real logistics scenario, built to demonstrate end-to-end decisions across architecture, ingestion, quality, transformation and analytical consumption.">Uma plataforma de dados inspirada em um cenário logístico real, criada para demonstrar decisões de arquitetura, ingestão, qualidade, transformação e consumo analítico de ponta a ponta.</p>
-          <div class="tag-list"><span>Azure SQL</span><span>Databricks</span><span>PySpark</span><span>Delta Lake</span><span>GitHub Actions</span></div>
-        </div>
-        <div class="architecture" aria-label="Arquitetura Medallion do projeto">
-          <div class="layer source"><small>01</small><strong>Sources</strong><span>CSV · Azure SQL</span></div>
-          <div class="connector"></div>
-          <div class="layer bronze"><small>02</small><strong>Bronze</strong><span>Raw · Audit</span></div>
-          <div class="connector"></div>
-          <div class="layer silver"><small>03</small><strong>Silver</strong><span>DQ · Refined</span></div>
-          <div class="connector"></div>
-          <div class="layer gold"><small>04</small><strong>Gold</strong><span>KPIs · Insights</span></div>
-        </div>
-      </article>
-    </section>
+    <section class="section" id="stack"><div class="section-head"><span class="section-kicker">03</span><h2>Tecnologias com nível de evidência claro</h2></div><div class="tool-grid" aria-label="Ferramentas e tecnologias em destaque">
+      <figure class="tool"><svg viewBox="0 0 48 48" role="img" aria-label="Power BI"><rect x="7" y="25" width="7" height="16" rx="2" fill="#F2C811"/><rect x="17" y="18" width="7" height="23" rx="2" fill="#F2C811"/><rect x="27" y="11" width="7" height="30" rx="2" fill="#F2C811"/><rect x="37" y="6" width="5" height="35" rx="2" fill="#F2C811"/></svg><figcaption>Power BI</figcaption></figure>
+      <figure class="tool"><svg viewBox="0 0 48 48" role="img" aria-label="Python"><path d="M24 5c-10 0-9 4-9 4v7h10v2H11s-6-1-6 9 5 10 5 10h6v-7c0-5 4-8 8-8h10c4 0 7-3 7-7V9s1-4-8-4Z" fill="#3776AB"/><circle cx="20" cy="10" r="1.8" fill="#fff"/><path d="M24 43c10 0 9-4 9-4v-7H23v-2h14s6 1 6-9-5-10-5-10h-6v7c0 5-4 8-8 8H14c-4 0-7 3-7 7v6s-1 4 8 4Z" fill="#FFD43B"/><circle cx="28" cy="38" r="1.8" fill="#fff"/></svg><figcaption>Python</figcaption></figure>
+      <figure class="tool"><svg viewBox="0 0 48 48" role="img" aria-label="SQL"><ellipse cx="24" cy="10" rx="16" ry="6" fill="#35A9FF"/><path d="M8 10v10c0 3 7 6 16 6s16-3 16-6V10M8 22v10c0 3 7 6 16 6s16-3 16-6V22" fill="none" stroke="#35A9FF" stroke-width="4"/></svg><figcaption>SQL</figcaption></figure>
+      <figure class="tool"><svg viewBox="0 0 48 48" role="img" aria-label="Microsoft Azure"><path d="M19 6 7 34h10l6-13 10 21h11L27 6Z" fill="#0089D6"/><path d="m20 34 17-8 4 8Z" fill="#50E6FF"/></svg><figcaption>Azure</figcaption></figure>
+      <figure class="tool"><svg viewBox="0 0 48 48" role="img" aria-label="Databricks"><path d="m24 6 18 9-18 9L6 15Zm0 14 18 9-18 9-18-9" fill="none" stroke="#FF3621" stroke-width="3" stroke-linejoin="round"/><path d="m8 35 16 8 16-8" fill="none" stroke="#FF3621" stroke-width="3" stroke-linecap="round"/></svg><figcaption>Databricks</figcaption></figure>
+      <figure class="tool"><svg viewBox="0 0 48 48" role="img" aria-label="Apache Spark"><path d="M11 12h15l-7 12h14L18 42l4-14H9Z" fill="#E25A1C"/><circle cx="34" cy="9" r="4" fill="#F3C66B"/></svg><figcaption>PySpark</figcaption></figure>
+      <figure class="tool"><svg viewBox="0 0 48 48" role="img" aria-label="Delta Lake"><path d="m24 6 18 32H6Z" fill="none" stroke="#5CE1D2" stroke-width="4"/><path d="M15 31h18L24 15Z" fill="#35A9FF" opacity=".65"/></svg><figcaption>Delta Lake</figcaption></figure>
+      <figure class="tool"><svg viewBox="0 0 48 48" role="img" aria-label="Power Platform"><path d="m8 18 15-9 17 10-16 10Z" fill="#742774"/><path d="m8 18 16 11v13L8 32Z" fill="#A43CA6"/><path d="m40 19-16 10v13l16-10Z" fill="#D05CE3"/></svg><figcaption>Power Platform</figcaption></figure>
+      <figure class="tool"><svg viewBox="0 0 48 48" role="img" aria-label="Git"><path d="M6 22 22 6a4 4 0 0 1 6 0l14 14a4 4 0 0 1 0 6L26 42a4 4 0 0 1-6 0L6 28a4 4 0 0 1 0-6Z" fill="#F05032"/><path d="m16 16 16 16M22 10v12l10 10" stroke="#fff" stroke-width="3"/><circle cx="22" cy="22" r="3" fill="#fff"/><circle cx="32" cy="32" r="3" fill="#fff"/></svg><figcaption>Git</figcaption></figure>
+      <figure class="tool"><svg viewBox="0 0 48 48" role="img" aria-label="Docker"><path d="M7 25h31c-1 10-7 16-18 16-9 0-13-6-13-16Z" fill="#2496ED"/><g fill="#fff"><rect x="11" y="17" width="5" height="5"/><rect x="18" y="17" width="5" height="5"/><rect x="25" y="17" width="5" height="5"/><rect x="18" y="10" width="5" height="5"/><rect x="25" y="10" width="5" height="5"/></g><path d="M37 21c3-3 5-1 6 0-1 3-3 4-6 4" fill="#2496ED"/></svg><figcaption>Docker</figcaption></figure>
+    </div><div class="stack"><article><h3>Experiência profissional</h3><p>Power BI · DAX · Power Query · Excel/VBA · Power Apps · Power Automate · SharePoint · Microsoft Copilot Studio · SQL · Python · SAS</p></article><article><h3>Prática em projetos</h3><p>Python · SQL · PySpark · Spark SQL · Delta Lake · Databricks · Azure SQL/JDBC · Docker · Git</p></article><article><h3>Em desenvolvimento</h3><p>Airflow DAG · PostgreSQL meteorológico · CI/CD reproduzível</p></article></div><a class="credential" href="https://learn.microsoft.com/api/credentials/share/pt-br/JopeCaneca/215937EF058F4C33?sharingId=A9AF119D516C8B7C">✓ Ver credencial Microsoft Azure Fundamentals — AZ-900 ↗</a></section>
 
-    <section class="section journey">
-      <div class="section-heading reveal">
-        <p class="section-number">04</p>
-        <h2 data-pt="Evolução contínua" data-en="Continuous growth">Evolução contínua</h2>
-      </div>
-      <div class="timeline reveal">
-        <div><span>01</span><h3 data-pt="Base de negócio" data-en="Business foundation">Base de negócio</h3><p data-pt="Supply Chain, logística e indicadores operacionais." data-en="Supply Chain, logistics and operational KPIs.">Supply Chain, logística e indicadores operacionais.</p></div>
-        <div><span>02</span><h3>Analytics & Automation</h3><p>Power BI, SQL, Python e Power Platform.</p></div>
-        <div><span>03</span><h3>Cloud Fundamentals</h3><p>Microsoft Azure Fundamentals — AZ-900.</p></div>
-        <div><span>04</span><h3>Data Engineering</h3><p>Azure, Databricks, Spark, Delta Lake e CI/CD.</p></div>
-      </div>
-    </section>
+    <section class="section" id="sobre"><div class="section-head"><span class="section-kicker">04</span><h2>Tecnologia, conhecimento e impacto</h2></div><div class="about"><p class="lead">Compreender pessoas, traduzir complexidade e transformar conhecimento em ação.</p><div><p>Além da atuação em Dados e Tecnologia, tenho experiência como professor e facilitador de conhecimento. Desenvolvo mentorias para jovens sobre carreira, competências, tecnologia e entrada no mercado de trabalho.</p><p>Também participo de iniciativas de impacto social e letramento digital, levando a mesma abordagem que aplico em dados: contexto, clareza e execução.</p></div></div></section>
 
-    <section class="contact" id="contato">
-      <div class="contact-inner reveal">
-        <p class="eyebrow" data-pt="VAMOS CONVERSAR" data-en="LET'S CONNECT">VAMOS CONVERSAR</p>
-        <h2 data-pt="Dados geram valor quando conectam tecnologia, contexto e decisão." data-en="Data creates value when it connects technology, context and decisions.">Dados geram valor quando conectam tecnologia, contexto e decisão.</h2>
-        <p data-pt="Estou aberto a trocar experiências e conhecer oportunidades em Engenharia de Dados e Analytics Engineering." data-en="I am open to exchanging ideas and exploring opportunities in Data Engineering and Analytics Engineering.">Estou aberto a trocar experiências e conhecer oportunidades em Engenharia de Dados e Analytics Engineering.</p>
-        <div class="contact-links">
-          <a class="button primary" href="https://www.linkedin.com/in/joao-caneca/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
-          <a class="button secondary" href="https://github.com/Soba-Jopeca" target="_blank" rel="noreferrer">GitHub ↗</a>
-        </div>
-      </div>
-    </section>
+    <section class="contact"><div class="kicker">CONTATO</div><h2>Dados geram valor quando conectam tecnologia, contexto e decisão.</h2><p>Interesse em Data Analytics, Business Intelligence e Analytics Engineering.</p><div class="actions"><a class="btn primary" href="https://www.linkedin.com/in/joao-caneca/">LinkedIn ↗</a><a class="btn" href="https://github.com/Soba-Jopeca">GitHub ↗</a><a class="btn" href="assets/CV_Joao_Caneca_Publico_Sanitizado.docx" download>Baixar CV</a></div></section>
   </main>
-
-  <footer><span>© <span id="year"></span> João Caneca</span><span data-pt="Construído com intenção, dados e código." data-en="Built with intention, data and code.">Construído com intenção, dados e código.</span></footer>
-  <script src="script.js"></script>
+  <footer><span>João Caneca · Campinas/SP</span><span>Dados · BI · Analytics Engineering</span></footer>
 </body>
 </html>
