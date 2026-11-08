@@ -9,3 +9,6 @@ const topButton=document.querySelector('.back-top');
 const updateTop=()=>topButton?.classList.toggle('visible',scrollY>650);
 addEventListener('scroll',updateTop,{passive:true});updateTop();
 topButton?.addEventListener('click',()=>scrollTo({top:0,behavior:'smooth'}));
+document.querySelectorAll('[data-current-year]').forEach(element=>{
+  element.textContent=String(new Date().getFullYear());
+});
