@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Logistics Analytics · Estudo de caso de João Caneca</title>
+  <meta name="description" content="Dashboard de logística em Power BI, desenvolvido com OpenAI Codex via MCP. Explore o nível de serviço, o custo por pedido e a carteira operacional.">
+  <link rel="canonical" href="https://soba-jopeca.github.io/projetos/logistics-analytics.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Logistics Analytics · Power BI com Codex via MCP">
+  <meta property="og:description" content="Estudo de caso sobre nível de serviço, custo por pedido e priorização de atrasos, com dashboard público.">
+  <meta property="og:url" content="https://soba-jopeca.github.io/projetos/logistics-analytics.html">
+  <meta property="og:image" content="https://soba-jopeca.github.io/assets/logistics-analytics-social.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Capa do Logistics Analytics com mapa de rotas e OTIF de 86,60%">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/site.css">
+</head>
+<body>
+  <a class="skip" href="#conteudo">Ir para o conteúdo</a>
+  <header class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="../index.html"><span class="mark">JC</span>João Caneca</a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu">Menu</button>
+      <nav class="nav-links" id="menu" aria-label="Navegação principal">
+        <a href="../index.html">Início</a>
+        <a href="../projetos.html">Projetos</a>
+        <a href="../index.html#experiencia">Experiência</a>
+        <a href="../index.html#contato">Contato</a>
+      </nav>
+      <a class="nav-cta" href="../index.html#contato">Vamos conversar</a>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <header class="page-hero">
+      <nav class="crumbs" aria-label="Localização">
+        <a href="../index.html">Início</a> / <a href="../projetos.html">Projetos</a> / <span aria-current="page">Logistics Analytics</span>
+      </nav>
+      <div class="tags"><span class="tag">Power BI · IA via MCP</span><span class="tag status">Publicado</span></div>
+      <h1>Logistics Analytics</h1>
+      <p>Onde investigar falhas de entrega? Qual pedido revisar primeiro? O dashboard separa a análise de nível de serviço e custo da rotina de priorização da carteira em aberto.</p>
+      <div class="actions">
+        <a class="btn primary" href="#demo">Explorar o dashboard</a>
+        <a class="btn" href="https://github.com/Soba-Jopeca/logistics-analytics">Ver documentação no GitHub</a>
+      </div>
+    </header>
+
+    <figure class="case-cover la-cover">
+      <div class="cover-frame">
+        <img src="../assets/logistics-analytics-capa.webp" width="1440" height="880" fetchpriority="high" alt="Capa do Logistics Analytics com mapa de rotas, tendência mensal e painel de OTIF">
+      </div>
+      <figcaption class="diagram-source">Capa do relatório. A base usa pedidos e transportadoras simulados.</figcaption>
+    </figure>
+
+    <div class="case-layout">
+      <div class="case-main">
+        <section class="case-section" aria-labelledby="problema">
+          <h2 id="problema">Da planilha à decisão</h2>
+          <p>A planilha reunia pedidos, datas, custos, status e ocorrências. A gestão precisava acompanhar desempenho e definir onde investigar falhas. A equipe de operação precisava localizar pedidos em aberto e priorizar o atendimento.</p>
+          <div class="compare la-questions">
+            <article>
+              <h3>Estratégia</h3>
+              <p><strong>Como evoluíram o serviço e o custo?</strong> A tendência mensal e os indicadores permitem comparar períodos. O painel mostra tanto o volume de falhas quanto a taxa de OTIF com seu denominador.</p>
+            </article>
+            <article>
+              <h3>Operação</h3>
+              <p><strong>Onde estão os atrasos e qual pedido vem primeiro?</strong> A concentração de atrasos pode ser explorada por região ou transportadora. A fila ordena os atrasados primeiro e usa a previsão de entrega mais antiga dentro do mesmo status.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="case-section" aria-labelledby="resultados">
+          <h2 id="resultados">O que a análise revelou</h2>
+          <dl class="la-results">
+            <div><dt>Pedidos analisados</dt><dd>1.000<span>Uma linha por pedido</span></dd></div>
+            <div><dt>OTIF</dt><dd>86,60%<span>827 no prazo e completos de 955 elegíveis</span></dd></div>
+            <div><dt>Custo por pedido</dt><dd>R$ 82,94<span>R$ 82.940,80 de custo logístico total</span></dd></div>
+            <div><dt>Lead time médio</dt><dd>5,91 dias<span>950 entregas com prazo válido</span></dd></div>
+          </dl>
+          <p>O <strong>Sudeste concentrou 61 das 128 falhas de OTIF</strong>, o maior volume para começar a investigação. O <strong>Norte teve o menor OTIF, 74,0% em 50 pedidos elegíveis</strong>. As duas leituras permitem avaliar impacto e proporção antes de priorizar uma ação.</p>
+          <p>Na posição de <strong>15/07/2026</strong>, a operação tinha <strong>24 pedidos em aberto</strong>, sendo 21 atrasados e 3 em trânsito. A fila abre espaço para investigar cada ocorrência a partir do status e da data prevista.</p>
+        </section>
+
+        <section class="case-section" aria-labelledby="solucao">
+          <h2 id="solucao">Como o dashboard foi construído</h2>
+          <p>O desafio técnico era preservar a granularidade de pedido, manter registros sem data de entrega e garantir que taxas e médias continuassem coerentes sob filtros. A solução combina staging rastreável no Power Query, modelo estrela, medidas DAX e dois contratos JSON para os visuais HTML.</p>
+          <div class="architecture" role="list" aria-label="Fluxo de dados">
+            <div class="stage" role="listitem">Excel e staging no Power Query</div>
+            <div class="stage" role="listitem">fPedidos e oito dimensões</div>
+            <div class="stage" role="listitem">Medidas DAX e contratos JSON Gold</div>
+            <div class="stage" role="listitem">Páginas HTML no Power BI Service</div>
+          </div>
+          <p>A Capa e a Estratégia compartilham indicadores e dados agrupados para recalcular os resultados no recorte. A Operação consome um contrato por pedido para localizar cada caso na fila. A data ativa do calendário é a data do pedido.</p>
+        </section>
+
+        <section class="case-section" aria-labelledby="ia">
+          <h2 id="ia">Como o Codex via MCP entrou no projeto</h2>
+          <ol class="la-process">
+            <li><strong>Inspeção do Power BI Desktop.</strong> O Codex usou o Power BI Authoring MCP local para listar tabelas, relações e medidas e executar consultas DAX de referência.</li>
+            <li><strong>Autoria por etapas.</strong> A skill <code>dax-creation-expert</code> guiou o modelo e as medidas. A <code>dataviz-html-dax</code> guiou os visuais, a navegação e os filtros internos. Os prompts explicitaram escopo, granularidade e critérios de aceite.</li>
+            <li><strong>Validação e publicação.</strong> Conferi totais, denominadores, contextos filtrados e estados vazios com consultas DAX e testes visuais. Associei as medidas aos visuais no Desktop e publiquei o relatório no Power BI Service.</li>
+          </ol>
+          <p class="evidence-note">O relatório publicado usa o modelo semântico e as medidas DAX para os indicadores. A participação da IA ocorreu durante o desenvolvimento.</p>
+          <div class="evidence-links">
+            <a href="https://github.com/Soba-Jopeca/logistics-analytics#desenvolvimento-com-ia-via-mcp">Ver configuração do MCP, skills e prompts</a>
+          </div>
+        </section>
+      </div>
+
+      <aside class="case-side" aria-label="Ficha do projeto">
+        <section class="side-card">
+          <h2>Ficha do projeto</h2>
+          <dl>
+            <dt>Autor</dt><dd>João Caneca</dd>
+            <dt>Período dos pedidos</dt><dd>01/07/2025 a 10/07/2026</dd>
+            <dt>Posição da operação</dt><dd>15/07/2026</dd>
+            <dt>Tecnologias</dt><dd>Excel, Power Query, Power BI, DAX, HTML Content, Codex e MCP</dd>
+          </dl>
+        </section>
+        <section class="side-card">
+          <h2>Como interpretar</h2>
+          <p class="notice">Os dados são simulados. A carteira retrata a posição registrada na fonte. As taxas ajudam a levantar hipóteses e priorizar investigações.</p>
+        </section>
+      </aside>
+    </div>
+
+    <section class="case-cover la-demo" id="demo" aria-labelledby="demo-title">
+      <div class="la-demo-head">
+        <div>
+          <h2 id="demo-title">Explore o dashboard publicado</h2>
+          <p>Comece pela Estratégia. Filtre uma região para comparar serviço e custo ou navegue para Operação e confira o primeiro pedido da fila.</p>
+        </div>
+        <a class="btn primary" href="https://app.powerbi.com/view?r=eyJrIjoiM2JhY2RjODEtM2IzOC00Y2ViLTgxM2EtNjU1MWQwZGRmMGMxIiwidCI6IjZkNTRhM2Y3LTM4YzItNDM2Ni1iNGNiLWVlZTg4NjI0NDI5NiJ9&amp;pageName=556cee0099956be5cb00" target="_blank" rel="noopener">Abrir no Power BI ↗</a>
+      </div>
+      <div class="cover-frame la-report">
+        <iframe title="Dashboard interativo Logistics Analytics no Power BI" src="https://app.powerbi.com/view?r=eyJrIjoiM2JhY2RjODEtM2IzOC00Y2ViLTgxM2EtNjU1MWQwZGRmMGMxIiwidCI6IjZkNTRhM2Y3LTM4YzItNDM2Ni1iNGNiLWVlZTg4NjI0NDI5NiJ9&amp;pageName=2689c11a13c7045d3052" width="1024" height="612" loading="lazy" allowfullscreen></iframe>
+      </div>
+      <div class="la-gallery" aria-label="Prévias das páginas de análise">
+        <figure>
+          <img src="../assets/logistics-analytics-estrategia.webp" alt="Página Estratégia com filtros, indicadores, tendência mensal e prioridades regionais" width="1440" height="1000" loading="lazy">
+          <figcaption><strong>Estratégia</strong> · Compare OTIF, custo por pedido, volume e lead time.</figcaption>
+        </figure>
+        <figure>
+          <img src="../assets/logistics-analytics-operacao.webp" alt="Página Operação com carteira ativa, concentração de atrasos e fila de pedidos" width="1440" height="940" loading="lazy">
+          <figcaption><strong>Operação</strong> · Localize atrasos e identifique o primeiro pedido a revisar.</figcaption>
+        </figure>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>© <span data-current-year>2026</span> João Caneca · Portfólio profissional</span>
+    <a href="../projetos.html">← Voltar aos projetos</a>
+  </footer>
+  <button class="back-top" type="button" aria-label="Voltar ao topo">↑</button>
+  <script src="../assets/site.js"></script>
+</body>
+</html>

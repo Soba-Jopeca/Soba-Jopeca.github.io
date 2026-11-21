@@ -40,3 +40,33 @@ footer{max-width:var(--max);margin:auto;padding:26px 24px;border-top:1px solid v
 @media(max-width:900px){.hero,.project-card,.impact-grid,.contact,.case-layout{grid-template-columns:1fr}.portrait{max-width:250px;margin:auto}.projects,.impact-grid,.section-intro,.section-actions,.stack-grid{margin-left:0}.project-card:nth-child(even) .project-media{order:-1}.project-grid{grid-template-columns:repeat(2,1fr)}.recruiter-bar{grid-template-columns:repeat(2,1fr);gap:8px}.recruiter-bar div,.recruiter-bar div:first-child,.recruiter-bar div:last-child{border:1px solid var(--line);border-radius:9px}.case-side{position:static}.nav-links{display:none}.menu-toggle{display:block}.nav-links.open{display:flex;position:absolute;left:18px;right:18px;top:70px;flex-direction:column;align-items:stretch;padding:18px;background:#0b1b2d;border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow)}.nav-links.open a{padding:8px}.nav-cta{display:none}}
 @media(max-width:620px){.section{padding:64px 18px}.hero{padding-top:48px}.hero h1,.page-hero h1{font-size:37px}.portrait img{width:208px;height:208px}.recruiter-bar{grid-template-columns:1fr 1fr;padding:0 18px;margin-bottom:28px}.recruiter-bar strong{font-size:12px}.proof-strip{grid-template-columns:1fr;padding:0 18px 50px}.section-head{grid-template-columns:36px 1fr}.section-intro{margin-top:4px}.stack-grid{grid-template-columns:1fr}.stack-card{padding:20px}.project-content{padding:23px}.project-media{min-height:210px}.case-pair,.metrics,.compare,.project-grid{grid-template-columns:1fr}.metrics{gap:2px}.metric{display:grid;grid-template-columns:74px 62px 1fr;align-items:center;gap:8px}.metric small{margin:0}.portfolio-group{padding-left:18px;padding-right:18px}.portfolio-group-head{display:block}.portfolio-group-head p{margin-top:8px}.section-actions{display:grid}.contact{margin:24px 18px 58px;padding:30px 23px}.architecture{grid-template-columns:1fr}.stage:not(:last-child):after{content:"↓";right:auto;left:50%;top:auto;bottom:-17px;transform:translateX(-50%)}footer{margin:0 18px;flex-direction:column;gap:5px}.nav-inner{padding:14px 18px}.brand{font-size:14px}.page-hero{padding:54px 18px 36px}.case-cover,.case-layout{padding-left:18px;padding-right:18px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+
+/* Logistics Analytics case */
+.la-cover .cover-frame img { aspect-ratio:auto; height:auto; }
+.la-questions { margin-top:20px; }
+.la-questions p { margin-bottom:0; }
+.la-results { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; margin:0 0 20px; }
+.la-results > div { padding:14px; background:rgba(5,16,29,.45); border:1px solid var(--line); border-radius:10px; }
+.la-results dt { color:var(--muted); font-size:13px; }
+.la-results dd { margin:2px 0; color:var(--cyan); font-weight:850; font-size:clamp(20px,3vw,27px); line-height:1.25; }
+.la-results span { display:block; font-weight:400; color:var(--muted); font-size:12px; line-height:1.4; }
+.la-process { padding-left:22px; }
+.la-process li + li { margin-top:10px; }
+.la-process code { overflow-wrap:anywhere; }
+.la-demo { scroll-margin-top:90px; }
+.la-demo-head { display:flex; justify-content:space-between; align-items:center; gap:16px 30px; margin-bottom:18px; }
+.la-demo-head h2 { margin:0; font-size:clamp(24px,4vw,34px); }
+.la-demo-head p { margin:6px 0 0; color:var(--muted); max-width:70ch; }
+.la-demo-head .btn { flex:none; }
+.la-report iframe { display:block; width:100%; height:auto; min-height:360px; aspect-ratio:1024/612; border:0; }
+.la-gallery { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; margin-top:24px; }
+.la-gallery figure { margin:0; min-width:0; border-radius:12px; border:1px solid var(--line); background:var(--panel); overflow:hidden; }
+.la-gallery img { width:100%; height:auto; aspect-ratio:1440/1000; object-fit:contain; object-position:top; background:#ebf0f3; }
+.la-gallery figcaption { padding:12px 14px; color:var(--muted); font-size:13px; }
+.la-gallery figcaption strong { color:var(--text); }
+.la-project-media img { object-fit:contain; }
+@media (max-width:620px) {
+  .la-demo-head { flex-wrap:wrap; }
+  .la-gallery { grid-template-columns:1fr; }
+  .la-report iframe { min-height:280px; }
+}
