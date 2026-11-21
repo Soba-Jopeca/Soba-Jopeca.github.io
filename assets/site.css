@@ -64,7 +64,17 @@ footer{max-width:var(--max);margin:auto;padding:26px 24px;border-top:1px solid v
 .la-gallery img { width:100%; height:auto; aspect-ratio:1440/1000; object-fit:contain; object-position:top; background:#ebf0f3; }
 .la-gallery figcaption { padding:12px 14px; color:var(--muted); font-size:13px; }
 .la-gallery figcaption strong { color:var(--text); }
-.la-project-media img { object-fit:contain; }
+.la-project-media { display:grid; align-content:center; min-width:0; }
+.la-project-media img { height:auto; }
+.la-project-media .demo-label { max-width:calc(100% - 28px); text-transform:uppercase; }
+.la-project-card .metric strong { white-space:nowrap; }
+@media (max-width:900px) {
+  .la-project-media .demo-label { position:static; justify-self:start; margin:10px 14px 14px; }
+}
+@media (max-width:620px) {
+  .la-project-card .metric { grid-template-columns:minmax(0,1fr) auto; }
+  .la-project-card .metric span { grid-column:1/-1; }
+}
 @media (max-width:620px) {
   .la-demo-head { flex-wrap:wrap; }
   .la-gallery { grid-template-columns:1fr; }
