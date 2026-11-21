@@ -45,6 +45,11 @@ footer{max-width:var(--max);margin:auto;padding:26px 24px;border-top:1px solid v
 .la-cover .cover-frame img { aspect-ratio:auto; height:auto; }
 .la-questions { margin-top:20px; }
 .la-questions p { margin-bottom:0; }
+.la-design { display:grid; gap:16px; margin:24px 0 0; }
+.la-design > div { border-left:2px solid var(--line); padding-left:14px; }
+.la-design h3 { font-size:1rem; margin:0 0 4px; }
+.la-design p { margin:0; }
+.la-design p + p { margin-top:10px; }
 .la-results { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; margin:0 0 20px; }
 .la-results > div { padding:14px; background:rgba(5,16,29,.45); border:1px solid var(--line); border-radius:10px; }
 .la-results dt { color:var(--muted); font-size:13px; }

@@ -4,11 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Logistics Analytics · Estudo de caso de João Caneca</title>
-  <meta name="description" content="Dashboard de logística em Power BI, desenvolvido com OpenAI Codex via MCP. Explore o nível de serviço, o custo por pedido e a carteira operacional.">
+  <meta name="description" content="Estudo de caso de João Caneca sobre nível de serviço e priorização logística. Veja o dashboard em Power BI, o modelo DAX e o desenvolvimento com OpenAI Codex via MCP.">
   <link rel="canonical" href="https://soba-jopeca.github.io/projetos/logistics-analytics.html">
   <meta property="og:type" content="article">
   <meta property="og:title" content="Logistics Analytics · Power BI com Codex via MCP">
-  <meta property="og:description" content="Estudo de caso sobre nível de serviço, custo por pedido e priorização de atrasos, com dashboard público.">
+  <meta property="og:description" content="Da planilha ao Power BI publicado. Veja as decisões de negócio, a modelagem, o DAX e a validação com Codex via MCP.">
   <meta property="og:url" content="https://soba-jopeca.github.io/projetos/logistics-analytics.html">
   <meta property="og:image" content="https://soba-jopeca.github.io/assets/logistics-analytics-social.jpg">
   <meta property="og:image:width" content="1200">
@@ -39,9 +39,9 @@
       <nav class="crumbs" aria-label="Localização">
         <a href="../index.html">Início</a> / <a href="../projetos.html">Projetos</a> / <span aria-current="page">Logistics Analytics</span>
       </nav>
-      <div class="tags"><span class="tag">Power BI · IA via MCP</span><span class="tag status">Publicado</span></div>
+      <div class="tags"><span class="tag">Power BI · IA via MCP</span><span class="tag status">Concluído</span></div>
       <h1>Logistics Analytics</h1>
-      <p>Onde investigar falhas de entrega? Qual pedido revisar primeiro? O dashboard separa a análise de nível de serviço e custo da rotina de priorização da carteira em aberto.</p>
+      <p>Desenvolvi um dashboard em Power BI para responder duas perguntas. Onde investigar falhas de entrega? Qual pedido revisar primeiro? O case mostra como usei modelagem dimensional, DAX e OpenAI Codex via MCP para apoiar essas decisões com indicadores verificáveis.</p>
       <div class="actions">
         <a class="btn primary" href="#demo">Explorar o dashboard</a>
         <a class="btn" href="https://github.com/Soba-Jopeca/logistics-analytics">Ver documentação no GitHub</a>
@@ -58,54 +58,86 @@
     <div class="case-layout">
       <div class="case-main">
         <section class="case-section" aria-labelledby="problema">
-          <h2 id="problema">Da planilha à decisão</h2>
-          <p>A planilha reunia pedidos, datas, custos, status e ocorrências. A gestão precisava acompanhar desempenho e definir onde investigar falhas. A equipe de operação precisava localizar pedidos em aberto e priorizar o atendimento.</p>
+          <h2 id="problema">Problema de negócio</h2>
+          <p>Uma planilha reunia pedidos, datas previstas e realizadas, custos e ocorrências de uma operação logística brasileira simulada. Para decidir onde atuar, era preciso transformar o histórico em indicadores comparáveis e, ao mesmo tempo, identificar os pedidos que ainda exigiam revisão.</p>
+          <p>O desafio era separar duas perguntas. A gestão precisava distinguir onde havia <strong>mais falhas em volume</strong> de onde o <strong>nível de serviço era proporcionalmente pior</strong>. A operação precisava olhar a carteira registrada na data de referência e saber qual pedido revisar primeiro.</p>
           <div class="compare la-questions">
             <article>
               <h3>Estratégia</h3>
-              <p><strong>Como evoluíram o serviço e o custo?</strong> A tendência mensal e os indicadores permitem comparar períodos. O painel mostra tanto o volume de falhas quanto a taxa de OTIF com seu denominador.</p>
+              <p>As entregas chegam no prazo e completas? Como evoluem custo por pedido e prazo médio? Qual região merece investigação pelo volume de falhas ou pela taxa de serviço?</p>
             </article>
             <article>
               <h3>Operação</h3>
-              <p><strong>Onde estão os atrasos e qual pedido vem primeiro?</strong> A concentração de atrasos pode ser explorada por região ou transportadora. A fila ordena os atrasados primeiro e usa a previsão de entrega mais antiga dentro do mesmo status.</p>
+              <p>Quantos pedidos estão em aberto? Onde se concentram os atrasos? Qual pedido revisar primeiro e que informações ajudam a investigar o caso?</p>
             </article>
           </div>
         </section>
 
+        <section class="case-section" aria-labelledby="solucao">
+          <h2 id="solucao">Solução analítica em Power BI</h2>
+          <p>Construí um modelo semântico compartilhado e organizei o relatório em três páginas. A <strong>Capa</strong> resume o período. A <strong>Estratégia</strong> compara nível de serviço, custo e prazo por meio de indicadores, tendência mensal e prioridades regionais. A <strong>Operação</strong> mostra a concentração dos atrasos e ordena a fila por status e pela previsão de entrega mais antiga dentro de cada status.</p>
+          <div class="architecture" role="list" aria-label="Fluxo de dados do relatório">
+            <div class="stage" role="listitem">Excel e staging no Power Query</div>
+            <div class="stage" role="listitem">Modelo estrela com oito dimensões</div>
+            <div class="stage" role="listitem">DAX e dois contratos JSON Gold</div>
+            <div class="stage" role="listitem">HTML Content no Power BI Service</div>
+          </div>
+
+          <div class="la-design">
+            <div>
+              <h3>Granularidade e calendário</h3>
+              <p>Padronizei tipos no Power Query, validei <code>ID_Pedido</code> como chave única e mantive os 50 pedidos sem data de entrega. A fato <code>fPedidos</code> tem uma linha por pedido. Oito dimensões filtram a fato com relações 1:* unidirecionais. A relação ativa do calendário usa <code>Data_Pedido</code>, de modo que a tendência compara grupos de pedidos pela data em que foram feitos.</p>
+            </div>
+            <div>
+              <h3>Regras de negócio em DAX</h3>
+              <p>Defini o OTIF como pedidos no prazo <strong>e</strong> completos divididos pelos pedidos com as duas flags preenchidas com Sim ou Não. Usei <code>DISTINCTCOUNT</code> para contar pedidos e <code>DIVIDE</code> para deixar a taxa em branco quando não há elegíveis. Para custo por pedido, o denominador é o total de pedidos no recorte. Para lead time, a média considera entregas registradas com prazo válido.</p>
+            </div>
+            <div>
+              <h3>Contratos de dados e filtros</h3>
+              <p>Capa e Estratégia recebem uma base agrupada com contagens e somas. Ao filtrar, o visual soma sucessos e elegíveis antes de dividir, preservando o peso de cada grupo. A Operação recebe dados em nível de pedido para localizar ID, previsão e motivo registrado na fila.</p>
+              <p>A comparação temporal usa janelas equivalentes. A base cobre julho de 2026 até o dia 10. Foram 25 pedidos de 1 a 10 de julho ante 33 nos mesmos dias de junho (−24,2%). A base usada para a referência do mês anterior fica fora dos totais do recorte atual.</p>
+            </div>
+          </div>
+          <div class="evidence-links">
+            <a href="https://github.com/Soba-Jopeca/logistics-analytics/blob/main/docs/modelo-e-medidas.md">Modelo dimensional e medidas</a>
+          </div>
+        </section>
+
         <section class="case-section" aria-labelledby="resultados">
-          <h2 id="resultados">O que a análise revelou</h2>
+          <h2 id="resultados">Resultados da demonstração</h2>
           <dl class="la-results">
             <div><dt>Pedidos analisados</dt><dd>1.000<span>Uma linha por pedido</span></dd></div>
             <div><dt>OTIF</dt><dd>86,60%<span>827 no prazo e completos de 955 elegíveis</span></dd></div>
             <div><dt>Custo por pedido</dt><dd>R$ 82,94<span>R$ 82.940,80 de custo logístico total</span></dd></div>
             <div><dt>Lead time médio</dt><dd>5,91 dias<span>950 entregas com prazo válido</span></dd></div>
           </dl>
-          <p>O <strong>Sudeste concentrou 61 das 128 falhas de OTIF</strong>, o maior volume para começar a investigação. O <strong>Norte teve o menor OTIF, 74,0% em 50 pedidos elegíveis</strong>. As duas leituras permitem avaliar impacto e proporção antes de priorizar uma ação.</p>
-          <p>Na posição de <strong>15/07/2026</strong>, a operação tinha <strong>24 pedidos em aberto</strong>, sendo 21 atrasados e 3 em trânsito. A fila abre espaço para investigar cada ocorrência a partir do status e da data prevista.</p>
-        </section>
-
-        <section class="case-section" aria-labelledby="solucao">
-          <h2 id="solucao">Como o dashboard foi construído</h2>
-          <p>O desafio técnico era preservar a granularidade de pedido, manter registros sem data de entrega e garantir que taxas e médias continuassem coerentes sob filtros. A solução combina staging rastreável no Power Query, modelo estrela, medidas DAX e dois contratos JSON para os visuais HTML.</p>
-          <div class="architecture" role="list" aria-label="Fluxo de dados">
-            <div class="stage" role="listitem">Excel e staging no Power Query</div>
-            <div class="stage" role="listitem">fPedidos e oito dimensões</div>
-            <div class="stage" role="listitem">Medidas DAX e contratos JSON Gold</div>
-            <div class="stage" role="listitem">Páginas HTML no Power BI Service</div>
-          </div>
-          <p>A Capa e a Estratégia compartilham indicadores e dados agrupados para recalcular os resultados no recorte. A Operação consome um contrato por pedido para localizar cada caso na fila. A data ativa do calendário é a data do pedido.</p>
+          <p><strong>Por onde começar na Estratégia?</strong> O Sudeste concentrou 61 das 128 falhas de OTIF, o maior volume. O Norte teve a menor taxa, 74,0% em 50 elegíveis. Esses recortes orientam duas investigações, uma pelo volume de falhas e outra pela proporção, levando em conta o tamanho de cada grupo.</p>
+          <p><strong>Qual a prioridade na Operação?</strong> Em 15/07/2026, havia 24 pedidos na carteira registrada, sendo 21 atrasados e 3 em trânsito. O painel destaca o atrasado com a previsão mais antiga e deixa visíveis transportadora, destino e motivo registrado para apoiar a revisão.</p>
         </section>
 
         <section class="case-section" aria-labelledby="ia">
-          <h2 id="ia">Como o Codex via MCP entrou no projeto</h2>
+          <h2 id="ia">Como desenvolvi com IA via MCP</h2>
+          <p>Defini as perguntas de negócio, as regras de cálculo e os critérios de aceite. Conectei o <strong>OpenAI Codex</strong> ao modelo aberto no Power BI Desktop por meio do <strong>Power BI Authoring MCP</strong>, executado localmente via STDIO.</p>
           <ol class="la-process">
-            <li><strong>Inspeção do Power BI Desktop.</strong> O Codex usou o Power BI Authoring MCP local para listar tabelas, relações e medidas e executar consultas DAX de referência.</li>
-            <li><strong>Autoria por etapas.</strong> A skill <code>dax-creation-expert</code> guiou o modelo e as medidas. A <code>dataviz-html-dax</code> guiou os visuais, a navegação e os filtros internos. Os prompts explicitaram escopo, granularidade e critérios de aceite.</li>
-            <li><strong>Validação e publicação.</strong> Conferi totais, denominadores, contextos filtrados e estados vazios com consultas DAX e testes visuais. Associei as medidas aos visuais no Desktop e publiquei o relatório no Power BI Service.</li>
+            <li><strong>Diagnóstico em modo de leitura.</strong> Usei o MCP para inspecionar tabelas, relações e medidas existentes e executar consultas DAX de referência antes de editar o modelo.</li>
+            <li><strong>Autoria por etapas.</strong> Usei escrita apenas no escopo aprovado. A skill <code>dax-creation-expert</code> orientou modelagem, medidas e testes. A <code>dataviz-html-dax</code> orientou os contratos de apresentação, os visuais e o comportamento dos filtros. Os prompts registram requisitos e critérios de aceite.</li>
+            <li><strong>Entrega e publicação.</strong> Revisei os resultados, associei as medidas aos visuais no Desktop e publiquei no Power BI Service. O público interage com os dados, medidas e visuais do relatório. A IA foi usada na autoria e na validação.</li>
           </ol>
-          <p class="evidence-note">O relatório publicado usa o modelo semântico e as medidas DAX para os indicadores. A participação da IA ocorreu durante o desenvolvimento.</p>
           <div class="evidence-links">
-            <a href="https://github.com/Soba-Jopeca/logistics-analytics#desenvolvimento-com-ia-via-mcp">Ver configuração do MCP, skills e prompts</a>
+            <a href="https://github.com/Soba-Jopeca/logistics-analytics/blob/main/docs/conexao-mcp.md">Guia de conexão MCP</a>
+            <a href="https://github.com/Soba-Jopeca/logistics-analytics/blob/main/docs/prompts-e-skills.md">Skills e prompts do projeto</a>
+          </div>
+        </section>
+
+        <section class="case-section" aria-labelledby="validacao">
+          <h2 id="validacao">Como verifiquei os resultados</h2>
+          <ul class="la-process">
+            <li><strong>Fonte e modelo.</strong> Reconciliei as 1.000 linhas com 1.000 IDs distintos e verifiquei a unicidade das dimensões e a ausência de chaves órfãs nos relacionamentos ativos.</li>
+            <li><strong>Medidas e visual.</strong> Comparei os totais DAX com a planilha e os resultados dos contratos JSON com as medidas nativas. Testei recortes por mês, região, transportadora, modal, categoria e status, incluindo contextos sem registros.</li>
+            <li><strong>Interação.</strong> Conferi filtros, ordenação, estados vazios e renderização no Desktop e no navegador. As consultas DAX e as expressões das medidas estão versionadas para reprodução.</li>
+          </ul>
+          <div class="evidence-links">
+            <a href="https://github.com/Soba-Jopeca/logistics-analytics/blob/main/examples/validacao.dax">Consultas DAX de validação</a>
           </div>
         </section>
       </div>
@@ -115,6 +147,7 @@
           <h2>Ficha do projeto</h2>
           <dl>
             <dt>Autor</dt><dd>João Caneca</dd>
+            <dt>Responsabilidade</dt><dd>Requisitos, modelagem, indicadores, visualização e validação</dd>
             <dt>Período dos pedidos</dt><dd>01/07/2025 a 10/07/2026</dd>
             <dt>Posição da operação</dt><dd>15/07/2026</dd>
             <dt>Tecnologias</dt><dd>Excel, Power Query, Power BI, DAX, HTML Content, Codex e MCP</dd>
@@ -122,7 +155,7 @@
         </section>
         <section class="side-card">
           <h2>Como interpretar</h2>
-          <p class="notice">Os dados são simulados. A carteira retrata a posição registrada na fonte. As taxas ajudam a levantar hipóteses e priorizar investigações.</p>
+          <p class="notice">Os dados são simulados e a carteira retrata a posição registrada em 15/07/2026. As taxas orientam investigação. Metas, SLA e causas das ocorrências exigiriam dados e regras adicionais.</p>
         </section>
       </aside>
     </div>
